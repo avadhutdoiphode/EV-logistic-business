@@ -1,0 +1,85 @@
+{
+  "theme": "Light",
+  "archetype": "1 (Organic & Earthy)",
+  "typography": {
+    "headings": "Cabinet Grotesk",
+    "body": "Satoshi",
+    "rules": [
+      "Use tracking-tight for all headings > 32px",
+      "Use leading-none for headings, leading-relaxed for body",
+      "Never use Inter, Roboto, or Open Sans for headings"
+    ]
+  },
+  "colors": {
+    "background": "#F9F9F6",
+    "surface": "#FFFFFF",
+    "primary": "#0B3B24",
+    "secondary": "#111827",
+    "accent": "#D4FF00",
+    "text_primary": "#111827",
+    "text_secondary": "#4B5563",
+    "border": "#E5E7EB",
+    "rules": [
+      "No teal (#1B93A4) or purple (#9D4CDD) allowed, especially for CTAs or Dashboards",
+      "Use Electric Lime (#D4FF00) for energetic highlights like 'Online' status, active route line, or small badges",
+      "Primary CTAs must use Deep Forest Green (#0B3B24) or Obsidian Black (#111827)",
+      "Always set hover states explicitly, ensuring text remains readable (e.g., hover:bg-[#082a19] hover:text-white)"
+    ]
+  },
+  "layout_and_spacing": {
+    "system": "Tailwind Scale: generous padding (p-4 to p-8) for mobile interfaces",
+    "customer_app": "Map-centric. Map takes up 60-70% of the viewport. Overlaid with Bottom Sheets (rounded-t-3xl) with a 1px inner border to separate from the map.",
+    "driver_app": "Control Room Grid for the earnings dashboard. Dense, scanable blocks. Generous padding inside data cards.",
+    "admin_app": "Data-dense lists with sticky headers. Use solid backgrounds, not glassmorphism, for maximum readability of metrics.",
+    "rules": [
+      "Mobile-first responsive grids",
+      "Optical alignment over geometrical",
+      "Containers with borders must have internal padding (p-4 or p-6) to prevent text collision"
+    ]
+  },
+  "components": {
+    "buttons": "Flat, slightly rounded (rounded-lg). Deep Forest Green bg, White text. Minimal animations.",
+    "cards": "Neumorphism 'Clay & Crisp' variant: Soft shadow (shadow-sm) + 1px subtle border (border-black/5). Crisp white background.",
+    "bottom_sheet": "Used for 'Where to?', Vehicle Selection, and Booking Confirmation. High z-index, crisp white background.",
+    "map_markers": "Custom SVG markers using the Electric Lime accent for high visibility against standard map tiles.",
+    "forms": "Use Shadcn-inspired clean inputs. No native HTML unstyled elements."
+  },
+  "images": {
+    "driver_avatar": {
+      "url": "https://images.pexels.com/photos/7363096/pexels-photo-7363096.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Smiling delivery driver wearing a red polo shirt",
+      "category": "driver_profile"
+    },
+    "vehicle_van": {
+      "url": "https://images.pexels.com/photos/32910572/pexels-photo-32910572.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Electric delivery van",
+      "category": "vehicle_selection_mini_truck"
+    },
+    "vehicle_scooter": {
+      "url": "https://images.pexels.com/photos/9168370/pexels-photo-9168370.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Electric scooter parked",
+      "category": "vehicle_selection_2_wheeler"
+    }
+  },
+  "accessibility": {
+    "rules": [
+      "All interactive elements MUST have data-testid attributes (e.g., data-testid='vehicle-select-button', data-testid='login-submit')",
+      "Ensure 4.5:1 contrast ratio for text. Text over lime accent must be black.",
+      "Support prefers-reduced-motion for bottom sheet transitions"
+    ]
+  },
+  "icons": {
+    "library": "lucide-react",
+    "style": "Clean, 2px stroke, minimal"
+  },
+  "instructions_to_main_agent": [
+    "Build the React Native Expo app utilizing NativeWind (Tailwind for RN) classes mapping to these guidelines.",
+    "Use .js files. Do not use TypeScript (.tsx) syntax.",
+    "Customer App: Focus on the map view taking 70% of the screen with a floating bottom sheet for 'Where to' and Vehicle selection.",
+    "Driver App: Implement an prominent Online/Offline toggle using the Electric Lime (#D4FF00) accent for the active 'Online' state.",
+    "Admin App: Use structured lists and tables for Driver/Customer/Booking management.",
+    "Never use placeholders for images. Always use the provided image URLs.",
+    "Enforce data-testid on all key interactive elements as per E1's Universal Design Rules.",
+    "Apply a 1px subtle border to cards and bottom sheets to give them the 'Clay & Crisp' definition."
+  ]
+}
